@@ -1,0 +1,126 @@
+h1{
+    color: red;
+}
+#colores-fondos{
+    background-color: rgb(74, 221, 44);
+    opacity: 30%;
+    h2{
+        color: peru;
+    }
+    p{
+        background-color: #1132eb;
+        color: rgb(255, 0, 191);
+    }
+}
+
+#tipografia{
+    h2{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: large;
+    }
+    h3{
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    p{
+        font-style: oblique;
+        font-size: small;
+    }
+}
+
+#espaciado{
+    text-align: center;
+    li{
+        text-align: justify;
+        margin: 15px;
+        padding: 10px;
+    }
+}
+
+#bordes-sombras{
+    border: dashed, red;
+    div{
+        border-radius: ;
+        border-color: blue;
+        border-style: double;
+        margin: 5px;
+        text-shadow: 1px 1px red;
+    }
+}
+
+#posicionamiento{
+    div{
+        position: relative;
+    }
+    footer{
+        position: absolute;
+        right: 0%;
+        top: 100%;
+    }
+}
+
+#productos{
+    ul{
+        list-style-type: square;
+        list-style-position: outside;
+    }
+    li::marker{
+        content: "😈​";
+    }
+}
+
+#botones button{
+    background-color: red;
+    color: aliceblue;
+    border-radius: 10%;
+    border-style: double;
+    border-color: greenyellow;
+}
+
+#tablas table, tr, th, td{
+    border-style: double;
+    border-color: aqua;
+    background-color: cornflowerblue;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#contenedor ul li{
+    margin: 15px;
+    padding-left: 20px;
+}
+
+#imagenes img{
+    border: blue solid;
+    border-radius: 30%;
+    size: 700px;
+}
+
+#formulario form label, input, textarea, button{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    background-color:lightpink;
+    margin: auto;
+    border-color: darkgreen;
+    border-style: dashed;
+}
+
+#enlaces ul li a:hover{
+    color: hotpink;
+    text-decoration:line-through;
+    text-shadow: 1px 1px darkblue;
+}
+
+#efectos-texto h3{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#efectos-texto p{
+    text-transform: lowercase;
+}
+
+#contenedor div{
+    display: inline-block;
+    margin-right: 20px;
+}
