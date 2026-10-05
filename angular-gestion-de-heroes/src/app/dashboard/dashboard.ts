@@ -1,12 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Heroe } from '../heroe';
 import { GestionarHeroes } from '../servicios/gestionar-heroes';
-import { RouterOutlet, RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterOutlet,RouterModule],
+  imports: [RouterOutlet,RouterModule, RouterLink],
   templateUrl: './dashboard.html',
   styleUrls: [ './dashboardcss' ]
 })
@@ -19,7 +19,8 @@ export class dashboard implements OnInit {
   }
 
   getHeroes(): void {
-     this.servicioGestionaHeroes.getHeroes().subscribe(heroes=>this.heroes=heroes.slice(0,4));
+    this.gestionarHeroes.getHeroes().subscribe(heroes=>this.heroes=heroes.slice(0,4));
+//     this.servicioGestionaHeroes.getHeroes().subscribe(heroes=>this.heroes=heroes.slice(0,4));
   }
    ngOnInit() {
       this.getHeroes();

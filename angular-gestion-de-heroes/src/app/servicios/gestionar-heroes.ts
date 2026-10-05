@@ -9,5 +9,10 @@ export class GestionarHeroes {
     getHeroes():Observable<Heroe[]>{
         return of(LISTAHEROES);
     }
+    getHeroe(id: number): Observable<Heroe|undefined> {
+    //this.gestionarMensajes.add(`Servicio heores: leyendo heroe con id=${id}`);
+    const heroe=LISTAHEROES.find(heroe => heroe.id === id);
+    return of(heroe);
+  }
     
 }
