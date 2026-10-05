@@ -4,10 +4,11 @@ import { UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroeDetalle } from '../heroe-detalle/heroe-detalle';
 import { GestionarHeroes } from '../servicios/gestionar-heroes';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
+import { Router } from 'express';
 
 @Component({
-  imports: [UpperCasePipe, FormsModule, HeroeDetalle, RouterLink],
+  imports: [UpperCasePipe, FormsModule, HeroeDetalle, RouterLink, RouterModule],
   selector: 'app-heroes',
   styleUrl: './heroes.css',
   templateUrl: './heroes.html',
@@ -15,6 +16,7 @@ import { RouterLink } from '@angular/router';
 export class Heroes implements OnInit {
   servicioGestionaHeroes=inject(GestionarHeroes)
   heroes?:Heroe[];
+  router=inject(Router);
   selectedHeroe?: Heroe;
   constructor(){
     this.heroes=[];
@@ -29,4 +31,8 @@ export class Heroes implements OnInit {
   onSelect(heroe: Heroe): void {
    this.selectedHeroe = heroe;
  }
+
+ mostrarDetalle(idHeroe:number){
+      this.router.navigate(['/detalle',idHeroe]);
+  }
 }

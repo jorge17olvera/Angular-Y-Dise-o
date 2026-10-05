@@ -2,9 +2,7 @@
 <ul class="heroes">
 @for (heroe of heroes; track heroe.id){
   <li >
-    <a routerLink="/detalle/{{heroe.id}}">
-    <span class="badge">{{heroe.id}}</span> {{heroe.nombre}}
-    </a>
+    <span class="badge" (click)="mostrarDetalle(heroe.id)">{{heroe.id}}</span> {{heroe.nombre}}
   </li>
   }
 </ul>

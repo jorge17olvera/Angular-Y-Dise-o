@@ -17,6 +17,7 @@ export class HeroeDetalle implements OnInit{
  private route = inject(ActivatedRoute);
  private gestionarHeroes = inject(GestionarHeroes);
  private location = inject(Location)
+ 
 
   constructor( ) {}
 

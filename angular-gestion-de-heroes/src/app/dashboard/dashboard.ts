@@ -8,7 +8,7 @@ import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet,RouterModule, RouterLink],
   templateUrl: './dashboard.html',
-  styleUrls: [ './dashboardcss' ]
+  styleUrls: [ './dashboard.css' ]
 })
 export class dashboard implements OnInit {
   heroes?:Heroe[];
