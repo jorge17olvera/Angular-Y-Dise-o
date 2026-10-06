@@ -1,0 +1,49 @@
+/* Aplicamos una fuente monoespaciada a todo el documento como se ve en la imagen */
+body {
+    font-family: monospace;
+}
+
+/* selecciones con identificador */
+#main {
+    background-color: gray;
+}
+
+/* seleccionando elementos con clase */
+.especial {
+    color: blue;
+}
+
+/* selección de varios elementos (agrupación de selectores) */
+h2, h3 {
+    border: 1px solid orange;
+}
+
+/* dentro de otro (selectores descendientes) */
+ul {
+    color: red;
+}
+
+ul ul {
+    color: green;
+}
+
+/* Selector de clase para el h3 "Antes" */
+.antes {
+    background-color: pink;
+}
+
+/* Hijo directo (afecta solo a la primera imagen que es hija directa de <p>) */
+p > img {
+    border: 3px solid black;
+}
+
+/* Selector descendiente o de hijo directo para la segunda imagen dentro del span */
+span > img {
+    border: 3px solid red;
+}
+
+/* Selector de hermano adyacente (o pseudoclase) para el h3 "Después" 
+   que va justo a continuación del párrafo de las imágenes */
+p + h3 {
+    background-color: blue;
+}
