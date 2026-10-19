@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "imagenSmall": "./images/producto-1-small.jpg",
+    "imagenGrande": "./images/producto-1-large.jpg",
+    "descripcion": "Comida india, muy especiada",
+    "nombre": "Comida india",
+    "precio": 79.99,
+    "valoracion": 4.5
+  },
+  {
+    "id": 2,
+    "imagenSmall": "./images/producto-2-small.jpg",
+    "imagenGrande": "./images/producto-2-large.jpg",
+    "nombre": "Comida nepali",
+    "descripcion": "Comida nepali.",
+    "precio": 129.99,
+    "valoracion": 4.7
+  },
+  {
+    "id": 3,
+    "imagenSmall": "./images/producto-3-small.jpg",
+    "imagenGrande": "./images/producto-3-large.jpg",
+    "nombre": "Comida turca",
+    "descripcion": "Algo más que kebab",
+    "precio": 49.95,
+    "valoracion": 4.3
+  },
+  {
+    "id": 4,
+    "imagenSmall": "./images/producto-4-small.jpg",
+    "imagenGrande": "./images/producto-4-large.jpg",
+    "nombre": "Comida arabe",
+    "descripcion": "Comida arabe.",
+    "precio": 89.9,
+    "valoracion": 4.6
+  },
+  {
+    "id": 5,
+    "imagenSmall": "./images/producto-5-small.jpg",
+    "imagenGrande": "./images/producto-5-large.jpg",
+    "nombre": "Comida española",
+    "descripcion": "Tortila de patatas.",
+    "precio": 24.5,
+    "valoracion": 4.8
+  }
+]

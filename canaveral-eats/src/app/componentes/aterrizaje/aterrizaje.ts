@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Ofertas } from '../ofertas/ofertas';
 import { Destacados } from '../destacados/destacados';
+import { Ofertas } from '../ofertas/ofertas';
 
 @Component({
-  imports: [Ofertas, Destacados],
+  imports: [Destacados, Ofertas],
   selector: 'app-aterrizaje',
   styleUrl: './aterrizaje.css',
   templateUrl: './aterrizaje.html',

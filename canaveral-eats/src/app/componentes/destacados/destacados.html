@@ -1,14 +1,16 @@
-@for (destacado of destacados; track $index){
+@if (destacados() && destacados().length > 0) {
+  <p>Productos recibidos: {{ destacados.length }}</p>
+  <div class="contenedor">
+@for (destacado of destacados(); track $index) {
 <mat-card class="example-card" appearance="outlined">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <div mat-card-avatar class="example-header-image"  [style.background-image]="'url(' + destacado.imagenSmall + ')'" ></div>
+    <mat-card-title>x</mat-card-title>
+    <mat-card-subtitle>{{destacado.nombre}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="destacado.imagenGrande" alt="x">
   <mat-card-content>
-    <p>
-      {{destacado.descripcion}}
+    <p>{{destacado.descripcion}}
     </p>
   </mat-card-content>
   <mat-card-actions>
@@ -16,6 +18,8 @@
     <button matButton>SHARE</button>
   </mat-card-actions>
 </mat-card>
-
-}  
-
+}
+</div>
+}  @else {
+  <p>No hay productos para mostrar.</p>
+}

@@ -3,6 +3,6 @@ import { Ofertas } from './componentes/ofertas/ofertas';
 import { Aterrizaje } from './componentes/aterrizaje/aterrizaje';
 
 export const routes: Routes = [
-    {path:"ofertas", component:Ofertas},
-    {path:"", component:Aterrizaje}
+  { path:"ofertas", component: Ofertas},
+  { path:"", component: Aterrizaje},
 ];

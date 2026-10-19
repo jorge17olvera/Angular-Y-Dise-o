@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component,inject, OnInit, signal } from '@angular/core';
 import { GestionarDestacados } from '../../servicios/gestionar-destacados';
-import { Producto } from '../../interfaces/producto';
+import { Producto} from '../../interfaces/producto';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -10,15 +10,16 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './destacados.css',
   templateUrl: './destacados.html',
 })
-export class Destacados {
-  private gestionarDestacados=inject(GestionarDestacados);
-  destacados?:Producto[];
+export class Destacados implements OnInit{
+  private gestionarDestacados = inject(GestionarDestacados);
+  destacados=signal<Producto[]>([]);
   ngOnInit(){
     this.getDestacados();
   }
   getDestacados(){
     this.gestionarDestacados.getDestacados().subscribe(destacados=>{
-      this.destacados= destacados;
+      console.log(destacados);
+      this.destacados.set(destacados);
     })
   }
 }

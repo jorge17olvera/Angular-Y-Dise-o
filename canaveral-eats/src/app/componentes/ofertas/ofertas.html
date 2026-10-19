@@ -1,3 +1,5 @@
 <div>
-    <img [src]="oferta?.imagen">
+  @if (oferta()){
+    <img [src]="oferta().imagen">
+  }
 </div>

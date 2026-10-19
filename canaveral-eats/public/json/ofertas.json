@@ -1,0 +1,5 @@
+[
+    {"id":1, "imagen":"foto1.png","descripcion":"Oferta numero 1"},
+    {"id":2, "imagen":"foto2.png","descripcion":"Oferta numero 2"},
+    {"id":3, "imagen":"foto3.png","descripcion":"Oferta numero 3"}
+  ]
