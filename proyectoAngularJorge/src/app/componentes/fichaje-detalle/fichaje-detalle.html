@@ -1,1 +1,34 @@
-<p>fichaje-detalle works!</p>
+<div class="contenedor-detalle">
+  <div class="cabecera-detalle">
+    <h2>Detalle del Fichaje #{{ fichajeId }}</h2>
+    <a routerLink="/fichajes" class="btn-volver">Volver a la lista</a>
+  </div>
+
+  <div class="tarjeta-info" *ngIf="fichajeSeleccionado; else noEncontrado">
+    <div class="dato">
+      <span class="etiqueta">Fecha:</span>
+      <span class="valor">{{ fichajeSeleccionado.fecha }}</span>
+    </div>
+
+    <div class="dato">
+      <span class="etiqueta">Hora de Entrada:</span>
+      <span class="valor">{{ fichajeSeleccionado.horaEntrada }}</span>
+    </div>
+
+    <div class="dato">
+      <span class="etiqueta">Hora de Salida:</span>
+      <span class="valor" *ngIf="fichajeSeleccionado.horaSalida">{{ fichajeSeleccionado.horaSalida }}</span>
+      <span class="valor en-curso" *ngIf="!fichajeSeleccionado.horaSalida">Jornada no finalizada</span>
+    </div>
+
+    <div class="mapa-simulado">
+      <p>📍 <strong>Ubicación del fichaje:</strong> IES El Cañaveral</p>
+    </div>
+  </div>
+
+  <ng-template #noEncontrado>
+    <div class="error-carga">
+      <p>No se pudo cargar la información del fichaje seleccionado.</p>
+    </div>
+  </ng-template>
+</div>
