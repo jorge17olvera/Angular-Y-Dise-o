@@ -1,0 +1,65 @@
+.contenedor-fichajes {
+  max-width: 900px;
+  margin: 30px auto;
+  font-family: sans-serif;
+}
+
+.acciones-superiores {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.btn-entrada {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabla-fichajes {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tabla-fichajes th, .tabla-fichajes td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.tabla-fichajes th {
+  background-color: #f4f4f4;
+}
+
+.en-curso {
+  color: #d39e00;
+  font-weight: bold;
+}
+
+.celdas-acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-salida {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-detalle {
+  background-color: #17a2b8;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9em;
+}

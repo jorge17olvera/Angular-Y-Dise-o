@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoturismo - Contacto</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>ECOTURISMO</h1></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="listado.html">Rutas</a></li>
+                <li><a href="detalle.html">Alojamiento</a></li>
+                <li><a href="formulario.html">Reserva</a></li>
+                <li><a href="contacto.html"><strong>Contacto</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="zona-contacto">
+            
+            <div class="info-contacto">
+                <h3>Datos de Contacto</h3>
+                <ul>
+                    <li><span title="Teléfono">Tel:</span> +34 900 123 456</li>
+                    <li><span title="Correo">Correo:</span> info@ecoturismo.es</li>
+                    <li><span>IG:</span> @ecoturismo_rutas</li>
+                </ul>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes: 09:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                
+                <h3>Envíanos un mensaje</h3>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Tu nombre" required id="nombre">
+                    <input type="email" placeholder="Tu correo" required id="email">
+                    <textarea placeholder="Tu mensaje..." rows="4" required id="mensaje"></textarea>
+                    <button type="button" onclick="if (document.getElementById('nombre').value==''||document.getElementById('email').value==''||document.getElementById('mensaje').value=='') {
+                        alert('Debes rellenar todos los campos')
+                    }else{
+                        alert('Ha sido enviado correctamente')
+                        document.getElementById('nombre').value=''
+                        document.getElementById('email').value=''
+                        document.getElementById('mensaje').value=''
+                    }"
+                    
+                    >Enviar</button>
+                </form>
+            </div>
+                <div class="como-llegar">
+                    <h3>Cómo llegar</h3>
+                    <p>Nos encontramos en la entrada del parque nacional.</p>
+                    <a href="https://www.google.com/maps/place/IES+El+Ca%C3%B1averal/@40.3124061,-3.8529028,18.08z/data=!3m1!5s0xd418c3bb704813d:0x5dc97cf10f8c2a74!4m6!3m5!1s0xd418c3a1f62d9e5:0xaefd32a6415e67c1!8m2!3d40.3125736!4d-3.8520269!16s%2Fg%2F11b620g97v?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D">Ver en maps</a>
+                </div>
+
+                <div class="mapa-ubicacion">
+                <div class="placeholder-mapa">
+                    <img src="img/ubi.png" alt="Ubicación en el mapa" id="fotoUbi">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Ecoturismo. Proyecto sostenible.</p>
+    </footer>
+</body>
+</html>

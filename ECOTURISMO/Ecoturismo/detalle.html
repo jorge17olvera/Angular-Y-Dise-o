@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoturismo - Detalle de Alojamiento</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>ECOTURISMO</h1></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="listado.html">Rutas</a></li>
+                <li><a href="detalle.html"><strong>Alojamiento</strong></a></li>
+                <li><a href="formulario.html">Reserva</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Inicio</a> / <a href="listado.html">Alojamientos</a> / <span>Refugio Alta Montaña</span>
+        </nav>
+
+        <section id="galeria">
+            <div class="imagen-principal">
+                <img src="img/cabaña.jpg" alt="Vista exterior del refugio">
+            </div>
+            <div class="miniaturas">
+                <img src="img/interior.jpeg" alt="Interior del refugio">
+                <img src="img/comedor.jpeg" alt="Comedor del refugio">
+            </div>
+        </section>
+
+        <div class="contenedor-detalle">
+            <section id="info-principal">
+                <div class="etiquetas">
+                    <span class="tipo">Refugio</span>
+                    <span class="valoracion">★ 4.7</span>
+                    <span class="capacidad">Capacidad: 24</span>
+                </div>
+                
+                <h3>Descripción</h3>
+                <p>El refugio se encuentra situado en el corazón del parque nacional. <em>Ideal para desconectar</em> y disfrutar de la naturaleza.</p>
+                
+                <h3>Servicios</h3>
+                <ul class="lista-servicios">
+                    <li>Agua caliente</li>
+                    <li>Cocina libre</li>
+                    <li>Calefacción</li>
+                </ul>
+
+                <h3>Rutas Próximas</h3>
+                <div class="rutas-relacionadas">
+                    <article class="tarjeta-miniatura">
+                        <img src="img/ruta2.jpg" alt="Ruta cercana al refugio">
+                        <span>10 KM</span> <span>DIF. MEDIA</span>
+                    </article>
+                </div>
+            </section>
+
+            <aside id="reserva-rapida">
+                <h3>Reserva tu estancia</h3>
+                <form action="#" method="POST">
+                    <label for="fecha-entrada">Entrada</label>
+                    <input type="date" id="fecha-entrada" name="fecha-entrada">
+                    
+                    <label for="huespedes">Huéspedes</label>
+                    <select id="huespedes" name="huespedes">
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                    </select>
+                    
+                    <button type="button" class="btn" onclick="alert('Reseverva completada')">Reservar</button>
+                </form>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>Ecoturismo. Proyecto sostenible.</p>
+    </footer>
+</body>
+</html>

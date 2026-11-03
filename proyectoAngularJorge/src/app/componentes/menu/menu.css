@@ -1,0 +1,34 @@
+.barra-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 15px 30px;
+}
+
+.enlaces a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.enlaces a.activo {
+  color: #007bff;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-salir {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}

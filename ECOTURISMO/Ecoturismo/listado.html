@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoturismo - Listado de Rutas</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ECOTURISMO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="listado.html"><strong>Rutas</strong></a></li>
+                <li><a href="detalle.html">Alojamiento</a></li>
+                <li><a href="formulario.html">Reserva</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="filtros-rutas">
+            <h2>Listado de Rutas</h2>
+            <div class="barra-busqueda">
+                <input type="text" placeholder="Buscar rutas...">
+            </div>
+        </section>
+
+        <section id="lista-rutas">
+            <article class="ruta-horizontal">
+                <div class="imagen-ruta">
+                    <img src="img/ruta2.jpg" alt="Ruta por la sierra">
+                </div>
+                <div class="info-ruta">
+                    <span class="etiqueta">12 KM</span>
+                    <span class="etiqueta">DIFICULTAD MEDIA</span>
+                    <span class="etiqueta">CIRCULAR</span>
+                    <p>Descripción breve del recorrido por la sierra...</p>
+                    <a href="detalle.html" class="btn">Ver Ruta</a>
+                </div>
+            </article>
+
+            <article class="ruta-horizontal">
+                <div class="imagen-ruta">
+                    <img src="img/ruta1.png" alt="Ruta por el valle">
+                </div>
+                <div class="info-ruta">
+                    <span class="etiqueta">8 KM</span>
+                    <span class="etiqueta">DIFICULTAD BAJA</span>
+                    <span class="etiqueta">LINEAL</span>
+                    <p>Paseo tranquilo ideal para familias...</p>
+                    <a href="detalle.html" class="btn">Ver Ruta</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ecoturismo. Proyecto sostenible.</p>
+    </footer>
+</body>
+</html>

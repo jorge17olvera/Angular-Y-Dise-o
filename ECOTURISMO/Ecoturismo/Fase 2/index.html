@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoturismo - Inicio</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f7f6;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #1e4023;
+            margin-bottom: 1rem;
+        }
+
+        header {
+            background-color: #2b5b32;
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav > ul > li {
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a:active {
+            color: #a3d9a5;
+            text-decoration: underline;
+        }
+
+        #hero {
+            background-color: #d1e2d3;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid #2b5b32;
+        }
+
+        .grid-rutas, .grid-alojamientos {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            justify-content: center;
+        }
+
+        .tarjeta-ruta, .tarjeta-alojamiento {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 4px;
+            height: auto;
+        }
+
+        .tarjeta-ruta:first-child {
+            border-top: 4px solid #2b5b32;
+        }
+
+        .tarjeta-ruta:last-child {
+            border-top: 4px solid #8e9e90;
+        }
+
+        .btn {
+            background-color: #2b5b32;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background-color: #1e4023;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body style="font-family: sans-serif; background-color: #f4f7f6; margin: 0; padding: 0;">
+
+    <header style="background-color: #2b5b32; color: white; padding: 1rem;">
+        <div class="logo">
+            <h1 style="margin: 0; font-size: 1.5rem;">ECOTURISMO</h1>
+        </div>
+        
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 1rem; padding: 0;">
+                <li><a href="index.html" style="color: white; text-decoration: underline; font-weight: bold;">Inicio</a></li>
+                <li><a href="listado.html">Rutas</a></li>
+                <li><a href="detalle.html">Alojamiento</a></li>
+                <li><a href="formulario.html">Reserva</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Explorar Rutas</h2>
+            <p>Descubre los parajes más impresionantes con nuestras rutas sostenibles.</p>
+            <button type="button">Ver catálogo</button>
+        </section>
+
+        <section id="rutas-destacadas">
+            <h3>Rutas Destacadas</h3>
+            <div class="grid-rutas">
+                <article class="tarjeta-ruta">
+                    <img src="img/ruta1.jpg" alt="Sendero boscoso de la ruta norte">
+                    <h4>Ruta del Norte</h4>
+                    <p>Dificultad Media | 12 KM</p>
+                </article>
+                <article class="tarjeta-ruta">
+                    <img src="img/ruta2.jpg" alt="Vista de la montaña en la ruta circular">
+                    <h4>Ruta Circular Montaña</h4>
+                    <p>Dificultad Alta | 18 KM</p>
+                </article>
+                <article class="tarjeta-ruta">
+                    <img src="img/ruta3.jpg" alt="Camino junto al río">
+                    <h4>Sendero del Río</h4>
+                    <p>Dificultad Baja | 5 KM</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="alojamientos">
+            <h3>Alojamientos Cercanos</h3>
+            <div class="grid-alojamientos">
+                <article class="tarjeta-alojamiento">
+                    <img src="img/alojamiento1.jpg" alt="Cabaña de madera ecológica">
+                    <h4>Cabaña del Bosque</h4>
+                    <p>Valoración: 4.8/5</p>
+                </article>
+                <article class="tarjeta-alojamiento">
+                    <img src="img/alojamiento2.jpg" alt="Refugio rural sostenible">
+                    <h4>Refugio Rural</h4>
+                    <p>Valoración: 4.5/5</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="inscripcion">
+            <h3>¿Listo para la aventura?</h3>
+            <button type="button">Inscribirse</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ecoturismo. Proyecto sostenible.</p>
+    </footer>
+
+</body>
+</html>
