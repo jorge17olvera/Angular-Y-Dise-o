@@ -1,1 +1,18 @@
-<p>ropa works!</p>
+<div class="contenedor-ropa">
+  <h2>Catálogo de Ropa de Trabajo</h2>
+
+  <div class="grid-prendas" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+    @for (prenda of catalogo(); track prenda.id) {
+      <div class="tarjeta-prenda" style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; width: 250px;">
+        <h3>{{ prenda.nombre }}</h3>
+        <p>{{ prenda.descripcion }}</p>
+        <p class="precio" style="font-weight: bold; font-size: 1.2em;">{{ prenda.precio }} €</p>
+        <button (click)="anadirAlCarrito(prenda)">Añadir al carrito</button>
+      </div>
+    } @empty {
+      <p>Cargando catálogo o no hay prendas disponibles...</p>
+    }
+
+  </div>
+</div>

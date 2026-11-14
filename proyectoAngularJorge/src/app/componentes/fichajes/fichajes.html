@@ -1,34 +1,38 @@
 <div class="contenedor-fichajes">
-  <h2>Control de Horario</h2>
+  <h2>Control de Presencia</h2>
+  <p>Trabajador: <strong>{{ sesionService.usuarioActual()?.nombre }}</strong></p>
 
-  <div class="acciones-superiores">
-    <button class="btn-entrada" (click)="ficharEntrada()">Registrar Entrada Hoy</button>
+  <div class="botones-fichar">
+    <button class="btn-entrada" (click)="fichar('entrada')">Fichar Entrada</button>
+    <button class="btn-salida" (click)="fichar('salida')">Fichar Salida</button>
   </div>
 
-  <table class="tabla-fichajes">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Entrada</th>
-        <th>Salida</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let fichaje of listaFichajes">
-        <td>{{ fichaje.fecha }}</td>
-        <td>{{ fichaje.horaEntrada }}</td>
-        <td>
-          <span *ngIf="fichaje.horaSalida">{{ fichaje.horaSalida }}</span>
-          <span *ngIf="!fichaje.horaSalida" class="en-curso">En curso...</span>
-        </td>
-        <td class="celdas-acciones">
-          <button *ngIf="!fichaje.horaSalida" class="btn-salida" (click)="ficharSalida(fichaje.id)">
-            Fichar Salida
-          </button>
-          <a [routerLink]="['/fichajes', fichaje.id]" class="btn-detalle">Ver Detalle</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="historial">
+    <h3>Últimos Fichajes</h3>
+
+    @if (historialFichajes.length > 0) {
+      <table class="tabla-historial">
+        <thead>
+          <tr>
+            <th>Acción</th>
+            <th>Fecha y Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (fichaje of historialFichajes; track fichaje.id) {
+            <tr>
+              <td>
+                <span class="etiqueta" [ngClass]="fichaje.tipo === 'entrada' ? 'verde' : 'roja'">
+                  {{ fichaje.tipo | uppercase }}
+                </span>
+              </td>
+              <td>{{ fichaje.fecha_hora }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    } @else {
+      <p>Aún no tienes ningún fichaje registrado.</p>
+    }
+  </div>
 </div>

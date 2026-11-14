@@ -1,28 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { Fichaje } from '../../interfaces/fichaje';
+import { HttpClient } from '@angular/common/http';
+import { GestionarSesionService } from '../../servicios/gestionar-sesion';
 
 @Component({
   selector: 'app-fichajes',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './fichajes.html',
   styleUrl: './fichajes.css'
 })
-export class Fichajes {
-  // Datos simulados temporales hasta que hagamos la petición HTTP a PHP
-  listaFichajes: Fichaje[] = [
-    { id: 1, fecha: '2026-11-01', horaEntrada: '08:00', horaSalida: '15:00' },
-    { id: 2, fecha: '2026-11-02', horaEntrada: '08:15', horaSalida: '14:45' },
-    { id: 3, fecha: '2026-11-03', horaEntrada: '07:55', horaSalida: null } // Fichaje en curso
-  ];
+export class Fichajes implements OnInit {
+  http = inject(HttpClient);
+  sesionService = inject(GestionarSesionService);
 
-  ficharEntrada() {
-    alert('Simulación: Se registrará la entrada en la base de datos.');
+  historialFichajes: any[] = [];
+
+  ngOnInit() {
+    this.cargarFichajes();
   }
 
-  ficharSalida(id: number) {
-    alert('Simulación: Se registrará la salida para el fichaje ' + id);
+  cargarFichajes() {
+    const usuario = this.sesionService.usuarioActual();
+    if (usuario) {
+      // Pedimos por GET los fichajes de este usuario concreto
+      this.http.get<any>(`http://localhost:8080/api/fichajes.php?usuario_id=${usuario.id}`)
+        .subscribe({
+          next: (respuesta) => {
+            if (respuesta.exito) {
+              this.historialFichajes = respuesta.fichajes;
+            }
+          },
+          error: (err) => console.error('Error al cargar fichajes', err)
+        });
+    }
+  }
+
+  fichar(tipo: 'entrada' | 'salida') {
+    const usuario = this.sesionService.usuarioActual();
+    if (usuario) {
+      const datos = {
+        usuario_id: usuario.id,
+        tipo: tipo
+      };
+
+      // Enviamos el POST para registrar la acción
+      this.http.post<any>('http://localhost:8080/api/fichajes.php', datos)
+        .subscribe({
+          next: (respuesta) => {
+            if (respuesta.exito) {
+              alert(`Fichaje de ${tipo} registrado correctamente.`);
+              this.cargarFichajes(); // Recargamos la lista automáticamente
+            }
+          },
+          error: (err) => alert('Error al registrar el fichaje.')
+        });
+    }
   }
 }

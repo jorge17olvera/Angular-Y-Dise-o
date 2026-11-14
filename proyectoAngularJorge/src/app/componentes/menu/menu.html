@@ -1,12 +1,14 @@
-<nav class="barra-navegacion" *ngIf="sesionService.usuarioActual()">
+<nav class="barra-navegacion" *ngIf="mostrarMenu">
   <div class="enlaces">
     <a routerLink="/dashboard" routerLinkActive="activo">Inicio</a>
     <a routerLink="/fichajes" routerLinkActive="activo">Fichajes</a>
     <a routerLink="/ropa" routerLinkActive="activo">Catálogo Ropa</a>
+    <a routerLink="/carrito" routerLinkActive="activo">
+      🛒 Carrito ({{ carritoService.items().length }})
+    </a>
   </div>
 
   <div class="perfil">
-    <!-- Aquí pondremos el icono del carrito más adelante -->
     <span class="nombre-usuario">Hola, {{ sesionService.usuarioActual()?.nombre }}</span>
     <button (click)="cerrarSesion()" class="btn-salir">Cerrar sesión</button>
   </div>

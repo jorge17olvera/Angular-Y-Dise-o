@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-dashboard',
-  styleUrl: './dashboard.css',
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './dashboard.html',
+  styleUrl: './dashboard.css'
 })
-export class Dashboard {}
+export class Dashboard { }
