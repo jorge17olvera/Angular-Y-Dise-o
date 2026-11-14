@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        /* Estilo requerido para la clase general */
+        .general {
+            width: 800px;
+            height: 600px;
+            object-fit: cover;
+            max-width: 100%; /* Para que sea responsiva en pantallas pequeñas */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicios Prácticos: Imágenes (Mapa de bits)</h1>
+
+    <section>
+        <p>Imagen 800x600</p>
+        <img src="https://picsum.photos/800/600" width="800" height="600" class="general" alt="Imagen fija de 800x600" title="AAAAAAAAAAAAAAAA">
+    </section>
+
+    <section>
+        <h2>2. Imagen con múltiples formatos</h2>
+        <picture>
+            <source srcset="https://picsum.photos/500/300.webp" type="image/webp">
+            <source srcset="https://picsum.photos/500/300.png" type="image/png">
+            <img src="https://picsum.photos/500/300.jpg" title="Revisa el formato de la imagen" alt="Imagen con alternativas de formato">
+        </picture>
+    </section>
+
+    <section>
+        <h2>3. Imagen adaptativa</h2>
+        <picture>
+            <source media="(max-width: 350px)" srcset="https://picsum.photos/300/200.jpg">
+            
+            <source media="(min-width: 351px) and (max-width: 1024px)" srcset="https://picsum.photos/600/400.jpg">
+            
+            <img src="https://picsum.photos/1200/800.jpg" alt="Imagen adaptativa según resolución de pantalla">
+        </picture>
+    </section>
+
+</body>
+</html>
