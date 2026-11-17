@@ -14,7 +14,7 @@ $db = [
     'host' => 'db',
     'port' => '3306',
     'username' => 'root',
-    'password' => 'futbolista', // Si pusiste contraseña al entrar a phpMyAdmin, escríbela aquí
+    'password' => 'root',
     'db' => 'proyecto_angular'
 ];
 ?>

@@ -30,17 +30,18 @@ export class Login {
         password: this.formularioLogin.value.password
       };
 
-      // Enviamos la petición a PHP
       this.http.post<any>('http://localhost:8080/api/usuarios.php', credenciales)
         .subscribe({
           next: (respuesta) => {
             if (respuesta.exito) {
               this.sesionService.usuarioActual.set(respuesta.usuario);
               this.router.navigate(['/dashboard']);
+            } else {
+              alert(respuesta.mensaje || 'Usuario o contraseña incorrectos.');
             }
           },
-          error: (err) => {
-            alert('Usuario o contraseña incorrectos.');
+          error: () => {
+            alert('Error al conectar con el servidor.');
           }
         });
     } else {
