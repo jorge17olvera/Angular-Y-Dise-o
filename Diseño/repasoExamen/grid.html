@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+        header{
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            align-items: center;
+        }
+       
+        header nav{
+            padding: 5px;
+            display: flex;
+            gap: 15px;
+        }
+
+        main{
+            background-color: blue;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas: "seccion aside";
+            gap: 10px;
+            padding: 5px;
+        }
+
+        footer{
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+
+        article{
+            border: black solid;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        article button{
+            margin-top: auto;
+            align-self: center;
+        }
+
+        .tarjetas{
+            padding: 10px;
+            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+        .destacada{
+            grid-column: span 2;
+        }
+        
+        section{
+            grid-area: seccion;
+        }
+
+        aside{
+            grid-area: aside;
+        }
+
+        @media (max-width: 768px) {
+            main{
+                grid-template-columns: 1fr;
+                grid-template-areas:"aside""seccion";
+            }
+            .destacada{
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <strong>Mi Web</strong>
+        <nav>
+            <a href="">Inicio</a>
+            <a href="">Final</a>
+            <a href="">Principio</a>
+        </nav>
+    </header>
+    <main>
+        <section style="background-color: yellow;">
+            <h2>Un parrafo</h2>
+            <div class="tarjetas">
+                <article class="destacada">
+                    <h3>Titulo</h3>
+                    <p>Texto</p>
+                    <button>Ver mas</button>
+                </article>
+                <article>
+                    <h3>Titulo</h3>
+                    <p>Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto </p>
+                    <button>Ver mas</button>
+                </article>
+                <article>
+                    <h3>Titulo</h3>
+                    <p>Texto</p>
+                    <button>Ver mas</button>
+                </article>
+                <article>
+                    <h3>Titulo</h3>
+                    <p>Texto</p>
+                    <button>Ver mas</button>
+                </article>
+            </div>
+        </section>
+        <aside style="background-color:darkorchid">
+            <h2>Otro parrafo</h2>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Esto es el pie de pagina</p>
+    </footer>
+
+</body>
+</html>
