@@ -1,18 +1,24 @@
 <div class="contenedor-dashboard">
-  <h1>Panel de Control</h1>
-  <p>Bienvenido al portal del empleado. ¿Qué necesitas hacer hoy?</p>
+  <header>
+    <h2>Bienvenido, {{ sesionService.usuarioActual()?.nombre }}</h2>
+    <p>Rol activo: <strong>{{ sesionService.usuarioActual()?.rol }}</strong></p>
+  </header>
 
-  <div class="tarjetas-acceso">
-    <div class="tarjeta" routerLink="/fichajes">
-      <h3>Mis Fichajes</h3>
-      <p>Registra tu jornada laboral y consulta tu historial de horas.</p>
-      <button>Ir a Fichajes</button>
-    </div>
+  <nav class="menu-empleado">
+    <h3>Opciones de Empleado</h3>
+    <button routerLink="/fichajes">Mis Fichajes</button>
+    <button routerLink="/ropa">Catálogo de Ropa</button>
+    <button routerLink="/carrito">Mi Carrito</button>
+  </nav>
 
-    <div class="tarjeta" routerLink="/ropa">
-      <h3>Catálogo de Ropa</h3>
-      <p>Solicita tu equipamiento y ropa de trabajo reglamentaria.</p>
-      <button>Ver Catálogo</button>
+  @if (sesionService.usuarioActual()?.rol === 'admin') {
+    <div class="zona-admin">
+      <h3>Panel de Administración</h3>
+      <button routerLink="/admin-fichajes">Gestionar Fichajes de Empleados</button>
     </div>
+  }
+
+  <div class="acciones-sesion">
+    <button type="button" (click)="cerrarSesion()">Cerrar sesión</button>
   </div>
 </div>

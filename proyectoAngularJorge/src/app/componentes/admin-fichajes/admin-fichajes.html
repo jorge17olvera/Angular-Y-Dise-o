@@ -1,0 +1,63 @@
+<div class="contenedor-admin">
+  <h2>Gestión de Fichajes (Administrador)</h2>
+  <button routerLink="/dashboard">Volver al Dashboard</button>
+
+  <form [formGroup]="formularioFichaje" (ngSubmit)="guardarFichaje()">
+    <h3>{{ editandoId ? 'Editar Fichaje #' + editandoId : 'Añadir Nuevo Fichaje' }}</h3>
+
+    <label>Empleado:
+      <select formControlName="usuario_id">
+        <option value="" disabled>Selecciona un empleado</option>
+        @for (emp of empleados; track emp.id) {
+          <option [value]="emp.id">{{ emp.nombre }} ({{ emp.email }})</option>
+        }
+      </select>
+    </label>
+
+    <label>Tipo:
+      <select formControlName="tipo">
+        <option value="Entrada">Entrada</option>
+        <option value="Salida">Salida</option>
+      </select>
+    </label>
+
+    <label>Fecha y Hora:
+      <input type="datetime-local" formControlName="fecha_hora">
+    </label>
+
+    <button type="submit">{{ editandoId ? 'Guardar cambios' : 'Añadir fichaje' }}</button>
+    @if (editandoId) {
+      <button type="button" (click)="cancelarEdicion()">Cancelar</button>
+    }
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Empleado</th>
+        <th>Tipo</th>
+        <th>Fecha y Hora</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (f of fichajes; track f.id) {
+        <tr>
+          <td>{{ f.id }}</td>
+          <td>{{ f.empleado }}</td>
+          <td>{{ f.tipo }}</td>
+          <td>{{ f.fecha_hora }}</td>
+          <td>
+            <button type="button" (click)="seleccionarParaEditar(f)">Editar</button>
+            <button type="button" (click)="eliminarFichaje(f.id)">Eliminar</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5">No hay fichajes registrados todavía.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

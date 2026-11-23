@@ -6,6 +6,7 @@ import { Fichajes } from './componentes/fichajes/fichajes';
 import { FichajeDetalle } from './componentes/fichaje-detalle/fichaje-detalle';
 import { Ropa } from './componentes/ropa/ropa';
 import { Carrito } from './componentes/carrito/carrito';
+import { AdminFichajes } from './componentes/admin-fichajes/admin-fichajes';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'fichajes/:id', component: FichajeDetalle },
   { path: 'ropa', component: Ropa },
   { path: 'carrito', component: Carrito },
+  { path: 'admin-fichajes', component: AdminFichajes },
   { path: '**', redirectTo: 'login' }
 ];
