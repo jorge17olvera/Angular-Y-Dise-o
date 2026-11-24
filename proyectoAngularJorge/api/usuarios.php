@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $json = file_get_contents('php://input');
     $input = json_decode($json, true);
 
-    // Endpoint para Login
     if (isset($input['accion']) && $input['accion'] == 'login') {
         $email = trim($input['email'] ?? '');
         $password = $input['password'] ?? '';
@@ -29,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Endpoint para Registro
     if (isset($input['accion']) && $input['accion'] == 'registro') {
         $nombre = trim($input['nombre'] ?? '');
         $email = trim($input['email'] ?? '');

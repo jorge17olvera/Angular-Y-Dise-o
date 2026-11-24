@@ -1,0 +1,85 @@
+:root{
+--altura-nav: 70px;
+--color-principal: #8B4513;
+--color-fondo: #FFF8F0;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--color-fondo);
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nav {
+    height: var(--height-nav);
+    background-color: var(--color-principal);
+}
+
+.nav__contenido{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__enlaces{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav__enlace{
+    text-decoration: none;
+    color: white;
+}
+
+.principal {
+    height: calc(100vh - var(--height-nav));
+    display: flex;
+    align-items: center;             /* centra imagen y texto en vertical */
+    gap: 2rem;
+}
+ 
+/* flex: grow shrink basis -> no crece, no se encoge, mide el 40% */
+.principal__imagen {
+    flex: 0 0 40%;
+    width: 40%;
+    aspect-ratio: 1 / 1;             /* cuadrada sin fijar píxeles */
+    object-fit: cover;               /* no se deforma */
+    border-radius: 50%;              /* cuadrado + 50% = círculo perfecto */
+}
+ 
+/* El texto se queda con todo el espacio sobrante */
+.principal__texto {
+    flex: 1;
+}
+ 
+.principal__titulo {
+    font-size: 3.5vw;
+    font-weight: 700;
+}
+ 
+.principal__parrafo {
+    font-size: 1.5vw;
+    font-weight: 300;
+    margin-top: 0.5em;
+}
+ 
+.boton {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8em 1.6em;
+    background-color: var(--color-principal);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+ 
+.boton:hover {
+    background-color: #6B3410;      
+}
