@@ -1,0 +1,39 @@
+body{
+    background-color: #F4F6F8;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+section{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+article{
+    border: black solid;
+    border-radius: 12px;
+    box-shadow: 5px 1px 6px red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: white;
+}
+
+.tarjeta__boton{
+    margin-top: auto;
+}
+
+@media (width>=900px){
+    section{
+        flex-direction: row;
+        
+    }
+}

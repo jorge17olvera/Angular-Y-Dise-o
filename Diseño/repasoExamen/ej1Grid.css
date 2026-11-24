@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+.grid{
+    width: 400px;
+    border: 1px solid #2e86c1;
+    gap: 8px;
+    display: grid;
+}
+
+.grid__celda{
+    background-color: rgba(221, 102, 238, 0.667);
+    border: 1px solid #5dade2;
+    color: #1b4f72;
+    text-align: center;
+    padding: auto;
+}
+
+.grid--1{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--2{
+ grid-template-columns: repeat(4, 1fr);
+}
+.celda-2-1{
+    grid-column: span 4;
+}
+
+.grid--3{
+    grid-template-columns: repeat(3, 1fr);
+}
+.celda-3-4{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.grid--4{
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "cabecera cabecera cabecera"
+    "menu contenido aside"
+    "pie pie pie";
+}
+.area--cabecera{grid-area: cabecera;}
+.area--menu{grid-area: menu;}
+.area--contenido{grid-area: contenido;}
+.area--aside{grid-area: aside;}
+.area--pie{grid-area: pie;}
+
+.grid--5{
+    grid-template-columns: repeat(3, 1fr);
+}
+.celda--1{order: 6;}
+.celda--2{order: 5;}
+.celda--3{order: 4;}
+.celda--4{order: 3;}
+.celda--5{order: 2;}
+
+
+.grid--6{
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+}
+
+.ej6{
+    grid-template-areas: 
+    "a a a a"
+    "b c c d"
+    "b e e e";
+}
+.a{
+    grid-area: a;
+}
+.b{
+    grid-area: b;
+}
+.c{
+    grid-area: c;
+}
+.d{
+    grid-area: d;
+}
+.e{
+    grid-area: e;
+}
